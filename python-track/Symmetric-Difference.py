@@ -1,20 +1,32 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 if __name__ == '__main__':
-    a = int(input())
-    first_list = input().split()
-    b = int(input())
-    second_list = input().split()   
-    final = []
-    for i in range(a):
-        if first_list[i] not in second_list and first_list[i] not in final:
-            final.append(first_list[i])
     
-    for i in range(b):
-        if second_list[i] not in first_list and second_list[i] not in final:
-            final.append(second_list[i])   
+    # 4
+    # 2 4 5 9
+    # 4
+    # 2 4 11 12
     
-    final = list(map(int, final))
-    final.sort()
-    for i in final:
-        print(i)
+    one = input()
+    two = set(input().split())
+    three = input()
+    four = set(input().split())
+    
+    symmetricDifference = list(two.difference(four).union(four.difference(two)))
+    sortedFinal = list(map(int, symmetricDifference))
+    sortedFinal.sort()
+    # print(type(sortedFinal))  
+    
+    for item in sortedFinal:
+        print(item)
+    
+    # print(f"{aMinusB} and {bMinusA}") 
+    # print(aMinusB)
+    
+    
+    
+    # print(one)
+    # print(two)
+    # print(three)
+    # print(four)
+    # myset = set()
     # print(final)
